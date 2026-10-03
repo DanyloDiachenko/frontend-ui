@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI Controls: Опис та приклади базових елементів</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div class="page-container">
+    
+    <header class="page-header">
+      <h1>UI Controls: Опис та приклади</h1>
+      <p>Лабораторна робота: Дослідження та практична реалізація 10 базових елементів інтерфейсу користувача.</p>
+    </header>
+
+    <nav class="nav-bar" aria-label="Навігація по елементах">
+      <a href="#radiobutton" class="nav-link">1. Radiobutton</a>
+      <a href="#checkbox" class="nav-link">2. Checkbox</a>
+      <a href="#text-input" class="nav-link">3. Text input</a>
+      <a href="#tabs" class="nav-link">4. Tabs</a>
+      <a href="#button" class="nav-link">5. Button</a>
+      <a href="#text-label" class="nav-link">6. Text label</a>
+      <a href="#link" class="nav-link">7. Link</a>
+      <a href="#tooltip" class="nav-link">8. Tooltip</a>
+      <a href="#dropdown" class="nav-link">9. Dropdown list</a>
+      <a href="#datagrid" class="nav-link">10. Data grid</a>
+    </nav>
+
+    <section id="radiobutton" class="control-section">
+      <h2>1. Radiobutton</h2>
+      <div class="purpose-description">
+        Призначення: Дозволяє користувачеві вибрати лише один варіант із набору взаємовиключних опцій.
+      </div>
+      <ul class="features-list">
+        <li>Застосовується там, де можлива тільки одна відповідь (наприклад, стать, метод оплати).</li>
+        <li>Об'єднується в одну логічну групу за допомогою однакового атрибута name.</li>
+      </ul>
+      <div class="examples-heading">Приклади:</div>
+      <div class="examples-grid">
+        <div class="example-block">
+          <div class="example-title">Вибір статі:</div>
+          <div class="radio-group">
+            <label class="radio-item">
+              <input type="radio" name="gender" id="gender-m" checked>
+              <span>Чоловіча</span>
+            </label>
+            <label class="radio-item">
+              <input type="radio" name="gender" id="gender-f">
+              <span>Жіноча</span>
+            </label>
+            <label class="radio-item">
+              <input type="radio" name="gender" id="gender-o">
+              <span>Інша</span>
+            </label>
+          </div>
+        </div>
+        <div class="example-block">
+          <div class="example-title">Спосіб оплати:</div>
+          <div class="radio-group">
+            <label class="radio-item">
+              <input type="radio" name="payment" id="pay-card" checked>
+              <span>Банківська картка</span>
+            </label>
+            <label class="radio-item">
+              <input type="radio" name="payment" id="pay-cash">
+              <span>Готівка при отриманні</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="checkbox" class="control-section">
+      <h2>2. Checkbox</h2>
+      <div class="purpose-description">
+        Призначення: Дозволяє вибрати одну, декілька або жодної опції, а також підтвердити стан «так/ні».
+      </div>
+      <ul class="features-list">
+        <li>Кожен прапорець працює незалежно від інших у групі.</li>
+        <li>Використовується для погодження з умовами, фільтрації товарів або налаштувань.</li>
+      </ul>
+      <div class="examples-heading">Приклади:</div>
+      <div class="examples-grid">
+        <div class="example-block">
+          <div class="example-title">Фільтр категорій:</div>
+          <div class="checkbox-group">
+            <label class="checkbox-item">
+              <input type="checkbox" id="cat-1" checked>
+              <span>Ноутбуки</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" id="cat-2" checked>
+              <span>Смартфони</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" id="cat-3">
+              <span>Аксесуари</span>
+            </label>
+          </div>
+        </div>
+        <div class="example-block">
+          <div class="example-title">Підтвердження згоди:</div>
+          <div class="checkbox-group">
+            <label class="checkbox-item">
+              <input type="checkbox" id="agree-terms" checked>
+              <span>Погоджуюся з правилами сервісу</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" id="agree-news">
+              <span>Отримувати щотижневі новини</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="text-input" class="control-section">
+      <h2>3. Text input</h2>
+      <div class="purpose-description">
+        Призначення: Забезпечує введення та редагування однорядкового тексту користувачем.
+      </div>
+      <ul class="features-list">
+        <li>Підтримує текстові дані: ім'я, адреса пошти, пароль або пошуковий запит.</li>
+        <li>Містить підказку (placeholder) та обмеження довжини рядка.</li>
+      </ul>
+      <div class="examples-heading">Приклади:</div>
+      <div class="examples-grid">
+        <div class="example-block">
+          <label for="input-name" class="input-label">Ім'я користувача:</label>
+          <input type="text" id="input-name" class="text-input" placeholder="Введіть ваше ім'я">
+        </div>
+        <div class="example-block">
+          <label for="input-search" class="input-label">Пошуковий запит:</label>
+          <input type="text" id="input-search" class="text-input" placeholder="Пошук по сайту...">
+        </div>
+        <div class="example-block">
+          <label for="input-pass" class="input-label">Пароль:</label>
+          <input type="password" id="input-pass" class="text-input" value="password123">
+        </div>
+      </div>
+    </section>
+
+    <section id="tabs" class="control-section">
+      <h2>4. Tabs</h2>
+      <div class="purpose-description">
+        Призначення: Організовують пов'язаний вміст у окремі вкладки для економії місця на сторінці.
+      </div>
+      <ul class="features-list">
+        <li>Дозволяють перемикатися між розділами без перезавантаження сторінки.</li>
+        <li>Відображають лише одну активну панель контенту в певний момент.</li>
+      </ul>
+      <div class="examples-heading">Приклади:</div>
+      <div class="examples-grid">
+        <div class="example-block">
+          <div class="tab-container">
+            <div class="tab-header">
+              <button type="button" class="tab-btn active" data-tab-name="Профіль">Профіль</button>
+              <button type="button" class="tab-btn" data-tab-name="Налаштування">Налаштування</button>
+              <button type="button" class="tab-btn" data-tab-name="Безпека">Безпека</button>
+            </div>
+            <div class="tab-content">Вміст вкладки: Профіль</div>
+          </div>
+        </div>
+        <div class="example-block">
+          <div class="tab-container">
+            <div class="tab-header">
+              <button type="button" class="tab-btn active" data-tab-name="Опис">Опис</button>
+              <button type="button" class="tab-btn" data-tab-name="Характеристики">Характеристики</button>
+            </div>
+            <div class="tab-content">Вміст вкладки: Опис</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="button" class="control-section">
+      <h2>5. Button</h2>
+      <div class="purpose-description">
+        Призначення: Викликає виконання певної дії при натисканні (відправка, збереження, видалення).
+      </div>
+      <ul class="features-list">
+        <li>Має візуальну ієрархію: головна дія (primary), другорядна (secondary), деструктивна (danger).</li>
+        <li>Змінює вигляд при наведенні курсору та натисканні.</li>
+      </ul>
+      <div class="examples-heading">Приклади:</div>
+      <div class="examples-grid">
+        <div class="example-block">
+          <div class="example-title">Основні кнопки дій:</div>
+          <div class="buttons-group">
+            <button type="button" class="btn btn-primary">Зберегти</button>
+            <button type="button" class="btn btn-secondary">Скасувати</button>
+            <button type="button" class="btn btn-danger">Видалити</button>
+          </div>
+        </div>
+        <div class="example-block">
+          <div class="example-title">Неактивна кнопка:</div>
+          <div class="buttons-group">
+            <button type="button" class="btn btn-secondary" disabled>Недоступно</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="text-label" class="control-section">
+      <h2>6. Text label</h2>
+      <div class="purpose-description">
+        Призначення: Текстовий підпис, який ідентифікує елемент введення або відображає інформаційний статус.
+      </div>
+      <ul class="features-list">
+        <li>Пов'язується з полем форми за допомогою атрибута for для покращення доступності.</li>
+        <li>Служить індикатором стану (успіх, попередження, помилка).</li>
+      </ul>
+      <div class="examples-heading">Приклади:</div>
+      <div class="examples-grid">
+        <div class="example-block">
+          <div class="example-title">Підписи до полів форми:</div>
+          <label for="demo-email" class="input-label">Електронна адреса (обов'язково):</label>
+          <input type="email" id="demo-email" class="text-input" placeholder="name@example.com">
+        </div>
+        <div class="example-block">
+          <div class="example-title">Текстові мітки статусів:</div>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <span class="badge badge-success">Виконано</span>
+            <span class="badge badge-warning">В обробці</span>
+            <span class="badge badge-danger">Помилка</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="link" class="control-section">
+      <h2>7. Link</h2>
+      <div class="purpose-description">
+        Призначення: Навігаційний елемент для переходу на іншу сторінку, зовнішній сайт або розділ документа.
+      </div>
+      <ul class="features-list">
+        <li>Створюється за допомогою тега &lt;a href="..."&gt;.</li>
+        <li>Візуально виділяється кольором та підкресленням.</li>
+      </ul>
+      <div class="examples-heading">Приклади:</div>
+      <div class="examples-grid">
+        <div class="example-block">
+          <div class="example-title">Зовнішні ресурси:</div>
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" class="link-item">Google Search</a>
+            <a href="https://uk.wikipedia.org" target="_blank" rel="noopener noreferrer" class="link-item">Wikipedia (Українська)</a>
+          </div>
+        </div>
+        <div class="example-block">
+          <div class="example-title">Внутрішнє навігаційне посилання:</div>
+          <a href="#radiobutton" class="link-item">Повернутися на початок списку</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="tooltip" class="control-section">
+      <h2>8. Tooltip</h2>
+      <div class="purpose-description">
+        Призначення: Спливаюча підказка, яка показує додаткову інформацію при наведенні курсору миші.
+      </div>
+      <ul class="features-list">
+        <li>Забезпечує контекстну довідку без перевантаження інтерфейсу зайвим текстом.</li>
+        <li>Зникає, коли курсор прибирається з елемента.</li>
+      </ul>
+      <div class="examples-heading">Приклади (наведіть курсор):</div>
+      <div class="examples-grid">
+        <div class="example-block">
+          <div class="example-title">Підказка на кнопці:</div>
+          <div>
+            <div class="tooltip-container">
+              <button type="button" class="btn btn-secondary">Наведіть на мене</button>
+              <span class="tooltip-text">Це текст спливаючої підказки</span>
+            </div>
+          </div>
+        </div>
+        <div class="example-block">
+          <div class="example-title">Підказка на текстовому терміні:</div>
+          <div>
+            Поняття <span class="tooltip-container" style="text-decoration: underline dotted #a5b4fc; color: #a5b4fc;">
+              UI/UX
+              <span class="tooltip-text">User Interface / User Experience</span>
+            </span> є ключовим у веб-розробці.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dropdown" class="control-section">
+      <h2>9. Dropdown list</h2>
+      <div class="purpose-description">
+        Призначення: Дозволяє користувачеві вибрати одне значення зі списку варіантів, що розгортається.
+      </div>
+      <ul class="features-list">
+        <li>Економить місце на екрані при наявності великої кількості пунктів вибору.</li>
+        <li>Використовується для вибору країни, мови, сортування тощо.</li>
+      </ul>
+      <div class="examples-heading">Приклади:</div>
+      <div class="examples-grid">
+        <div class="example-block">
+          <label for="select-country" class="input-label">Вибір країни:</label>
+          <select id="select-country" class="select-input">
+            <option value="ua" selected>Україна</option>
+            <option value="pl">Польща</option>
+            <option value="de">Німеччина</option>
+            <option value="us">США</option>
+          </select>
+        </div>
+        <div class="example-block">
+          <label for="select-fruit" class="input-label">Категорія товару:</label>
+          <select id="select-fruit" class="select-input">
+            <option value="1">Електроніка</option>
+            <option value="2">Книги</option>
+            <option value="3">Одяг</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section id="datagrid" class="control-section">
+      <h2>10. Data grid</h2>
+      <div class="purpose-description">
+        Призначення: Структуроване відображення табличних даних у вигляді рядків і стовпців.
+      </div>
+      <ul class="features-list">
+        <li>Використовується для звітів, списків користувачів, каталогів та фінансових таблиць.</li>
+        <li>Забезпечує чітке співставлення властивостей кожного об'єкта.</li>
+      </ul>
+      <div class="examples-heading">Приклад таблиці даних:</div>
+      <div class="table-wrapper">
+        <table class="simple-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Прізвище та ім'я</th>
+              <th>Посада</th>
+              <th>Місто</th>
+              <th>Статус</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Коваленко Олександр</td>
+              <td>Frontend Developer</td>
+              <td>Київ</td>
+              <td><span class="badge badge-success">Активний</span></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Мельник Марія</td>
+              <td>UI/UX Designer</td>
+              <td>Львів</td>
+              <td><span class="badge badge-success">Активний</span></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Шевченко Богдан</td>
+              <td>QA Engineer</td>
+              <td>Одеса</td>
+              <td><span class="badge badge-warning">У відпустці</span></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Ткаченко Анна</td>
+              <td>Project Manager</td>
+              <td>Харків</td>
+              <td><span class="badge badge-success">Активний</span></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Кравченко Дмитро</td>
+              <td>DevOps Engineer</td>
+              <td>Дніпро</td>
+              <td><span class="badge badge-danger">Неактивний</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>
